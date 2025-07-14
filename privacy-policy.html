@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=340, initial-scale=1.0">
-  <title>นโยบายความเป็นส่วนตัว (PDPA) | โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา)</title>
+  <title>นโยบายความเป็นส่วนตัว | Privacy Policy | โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา)</title>
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      background: #161616;
-      color: #ffe066;
+      background: #fff;
+      color: #232323;
       font-family: 'Prompt', sans-serif;
       margin: 0;
       min-height: 100vh;
@@ -16,119 +16,232 @@
       flex-direction: column;
     }
     .container {
-      max-width: 640px;
+      max-width: 700px;
       margin: 40px auto;
-      background: #232323;
+      background: #fff;
       border-radius: 2rem;
-      box-shadow: 0 8px 32px 0 #000a;
+      box-shadow: 0 6px 24px 0 #0001;
       padding: 2.5rem 2rem 2rem 2rem;
+      border: 1.5px solid #ffe066;
+    }
+    .logo-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+    .logo-box img {
+      height: 70px;
+      width: auto;
+      display: block;
+      background: #fff;
+      border-radius: 1rem;
+      border: 2px solid #ffe066;
+      padding: 0.3rem;
+      box-shadow: 0 2px 16px #ffe06630;
     }
     h1 {
       color: #ffe066;
-      font-size: 2.1rem;
+      font-size: 2rem;
       font-weight: 600;
-      margin-top: 0;
+      margin-top: 0.2rem;
       letter-spacing: 0.01em;
+      text-align: center;
     }
     .school-info {
-      font-size: 1.1rem;
+      font-size: 1.09rem;
       margin-bottom: 2rem;
-      color: #fffde4;
+      color: #333;
       line-height: 1.5;
+      text-align: center;
     }
     h2 {
-      color: #fffbe8;
-      font-size: 1.2rem;
-      margin: 2.2rem 0 1rem 0;
+      color: #d4af37;
+      font-size: 1.15rem;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
     }
-    h3 {
-      color: #ffe066;
-      font-size: 1.06rem;
-      margin: 1.2rem 0 0.7rem 0;
-      font-weight: 500;
+    .en {
+      font-size: 0.97rem;
+      color: #888a;
+      margin-bottom: 0.2rem;
+      margin-top: -0.4rem;
     }
     ul, ol { margin-left: 1.3rem; }
-    a { color: #ffe066; text-decoration: underline; }
+    a { color: #232323; text-decoration: underline; }
     .law-note {
-      background: #ffe06633;
-      color: #fffbe8;
+      background: #ffe06615;
+      color: #444;
       padding: 1rem;
       border-radius: 1.2rem;
-      font-size: 1.03rem;
+      font-size: 1.01rem;
       margin: 2.2rem 0 1rem 0;
-      border-left: 7px solid #ffe066;
+      border-left: 6px solid #ffe066;
     }
     .footer {
       color: #bdb76b;
       font-size: 0.96rem;
       margin-top: 3rem;
       text-align: center;
-      opacity: 0.7;
+      opacity: 0.8;
     }
-    @media (max-width: 650px) {
-      .container { margin: 0; border-radius: 0; box-shadow: none; padding: 2rem 0.7rem; }
-      h1 { font-size: 1.3rem; }
-      .school-info { font-size: 0.98rem; }
+    .line-box {
+      margin: 2.2rem 0 1.5rem 0;
+      text-align: center;
+    }
+    .line-link {
+      display: inline-flex;
+      align-items: center;
+      background: #ffe066;
+      color: #232323;
+      font-weight: 600;
+      border-radius: 1.6rem;
+      padding: 0.5rem 1.1rem;
+      font-size: 1.07rem;
+      text-decoration: none;
+      margin-top: 0.4rem;
+      box-shadow: 0 2px 12px #ffe06644;
+      transition: background 0.2s;
+    }
+    .line-link:hover {
+      background: #ffe299;
+    }
+    .line-link img {
+      height: 32px;
+      width: 32px;
+      margin-right: 0.6rem;
+      border-radius: 50%;
+      background: #fff;
+      border: 1.5px solid #06c755;
+      box-shadow: 0 2px 8px #06c75533;
+    }
+    .line-qr {
+      margin-top: 0.6rem;
+      margin-bottom: 0.4rem;
+      border-radius: 1rem;
+      border: 2px solid #ffe066;
+      width: 115px;
+      height: 115px;
+      background: #fff;
+      box-shadow: 0 1px 6px #ffe06633;
+    }
+    @media (max-width: 700px) {
+      .container { margin: 0; border-radius: 0; box-shadow: none; padding: 2rem 0.7rem; border: none; }
+      h1 { font-size: 1.18rem; }
+      .school-info { font-size: 0.97rem; }
+      .logo-box img { height: 48px; }
+      .line-qr { width: 78px; height: 78px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>นโยบายความเป็นส่วนตัว (PDPA)<br>
-      <span style="font-size:1.1rem;font-weight:400">Privacy Policy</span>
+    <div class="logo-box">
+      <img src="https://raw.githubusercontent.com/watdeebon/LineBot/refs/heads/main/logo-BotWDB.png" alt="โลโก้โรงเรียนวัดดีบอน">
+    </div>
+    <h1>
+      นโยบายความเป็นส่วนตัว<br>
+      <span style="font-size:1.08rem;font-weight:400">Privacy Policy</span>
     </h1>
     <div class="school-info">
       โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา)<br>
+      Wat Deebon (Klom Aekkachai Wittaya) School<br>
       สำนักงานเขตพื้นที่การศึกษาประถมศึกษาราชบุรี เขต 2<br>
-      หมู่ 4 ถนนเพชรเกษม ตำบลบ้านฆ้อง อำเภอโพธาราม จังหวัดราชบุรี<br>
-      โทร. 032 232 686
+      4 Phetkasem Rd., Ban Khong, Photharam, Ratchaburi, Thailand<br>
+      Tel. 032 232 686
+    </div>
+
+    <div class="line-box">
+      <div>
+        <b>LINE Official Account โรงเรียน</b>
+        <div class="en">School LINE Official Account</div>
+      </div>
+      <a class="line-link" href="https://lin.ee/ejtvVyu" target="_blank">
+        <img src="https://scdn.line-apps.com/n/line_add_friends/btn/en.png" alt="Add LINE">
+        เพิ่มเพื่อน/Add LINE
+      </a>
+      <br>
+      <img class="line-qr" src="https://qr-official.line.me/gs/M_504oylvc_BW.png" alt="LINE QR code">
+      <div class="en" style="font-size:0.95rem;">Scan QR code to add our school on LINE</div>
     </div>
 
     <h2>1. การเก็บรวบรวมข้อมูลส่วนบุคคล</h2>
+    <div class="en">1. Personal Data Collection</div>
     <p>
       โรงเรียนจะเก็บข้อมูลส่วนบุคคลผ่านเว็บไซต์, LINE BOT, ฟอร์มออนไลน์ และระบบอื่นที่เกี่ยวข้อง <br>
       ข้อมูลที่อาจถูกรวบรวม เช่น ชื่อ-นามสกุล, เบอร์โทรศัพท์, LINE ID, ข้อมูลการติดต่อ, ข้อมูลผู้ปกครอง, ข้อความที่โต้ตอบผ่านระบบ ฯลฯ
+      <br>
+      <span class="en">We collect personal data via website, LINE BOT, online forms, and related systems. Data collected may include name, phone number, LINE ID, contact details, parent information, or conversation messages, etc.</span>
     </p>
 
     <h2>2. วัตถุประสงค์ของการใช้ข้อมูล</h2>
+    <div class="en">2. Purpose of Data Usage</div>
     <ul>
-      <li>ใช้ในการติดต่อ สื่อสาร หรือแจ้งข้อมูลข่าวสารสำคัญจากโรงเรียน ผ่าน LINE BOT, เว็บไซต์, หรือสื่ออื่น ๆ</li>
-      <li>ใช้ในการบริหารจัดการนักเรียน-ผู้ปกครอง เช่น แจ้งการบ้าน ผลการเรียน ประกาศต่าง ๆ</li>
-      <li>ใช้เพื่อปรับปรุงหรือพัฒนาบริการของโรงเรียน</li>
-      <li>ปฏิบัติตามข้อกฎหมายหรือข้อบังคับของทางราชการ</li>
+      <li>ใช้ในการติดต่อ สื่อสาร หรือแจ้งข้อมูลข่าวสารสำคัญจากโรงเรียน ผ่าน LINE BOT, เว็บไซต์, หรือสื่ออื่น ๆ<br>
+          <span class="en">Contacting, informing, or sending important notifications via LINE BOT, website, or other channels.</span>
+      </li>
+      <li>ใช้ในการบริหารจัดการนักเรียน-ผู้ปกครอง เช่น แจ้งการบ้าน ผลการเรียน ประกาศต่าง ๆ<br>
+        <span class="en">Student/parent management e.g. homework, grade reports, school announcements.</span>
+      </li>
+      <li>ใช้เพื่อปรับปรุงหรือพัฒนาบริการของโรงเรียน<br>
+        <span class="en">To improve and develop school services.</span>
+      </li>
+      <li>ปฏิบัติตามข้อกฎหมายหรือข้อบังคับของทางราชการ<br>
+        <span class="en">Compliance with laws and official regulations.</span>
+      </li>
     </ul>
 
     <h2>3. การจัดเก็บและเปิดเผยข้อมูล</h2>
+    <div class="en">3. Data Storage & Disclosure</div>
     <ul>
-      <li>ข้อมูลของท่านจะถูกเก็บรักษาอย่างปลอดภัยในระบบของโรงเรียน</li>
-      <li>โรงเรียนจะไม่เปิดเผยหรือขายข้อมูลส่วนบุคคลให้บุคคลภายนอก เว้นแต่ได้รับความยินยอม หรือมีข้อกฎหมาย PDPA รองรับ</li>
-      <li>อาจเปิดเผยต่อหน่วยงานราชการหรือบุคคลที่เกี่ยวข้องกรณีมีข้อกฎหมายกำหนด</li>
+      <li>ข้อมูลของท่านจะถูกเก็บรักษาอย่างปลอดภัยในระบบของโรงเรียน<br>
+        <span class="en">Your data will be securely stored in our system.</span>
+      </li>
+      <li>โรงเรียนจะไม่เปิดเผยหรือขายข้อมูลส่วนบุคคลให้บุคคลภายนอก เว้นแต่ได้รับความยินยอม หรือมีข้อกฎหมาย PDPA รองรับ<br>
+        <span class="en">We will not disclose/sell your data except with your consent or as required by PDPA law.</span>
+      </li>
+      <li>อาจเปิดเผยต่อหน่วยงานราชการหรือบุคคลที่เกี่ยวข้องกรณีมีข้อกฎหมายกำหนด<br>
+        <span class="en">Data may be disclosed to government agencies if required by law.</span>
+      </li>
     </ul>
 
     <h2>4. สิทธิของเจ้าของข้อมูล</h2>
+    <div class="en">4. Data Subject Rights</div>
     <ul>
-      <li>ท่านมีสิทธิขอเข้าถึง, แก้ไข, ลบ หรือระงับการใช้ข้อมูลส่วนบุคคลของท่าน</li>
-      <li>หากต้องการถอนความยินยอม หรือต้องการสอบถามข้อมูลเพิ่มเติม กรุณาติดต่อโรงเรียนตามช่องทางที่ระบุด้านล่าง</li>
+      <li>ท่านมีสิทธิขอเข้าถึง, แก้ไข, ลบ หรือระงับการใช้ข้อมูลส่วนบุคคลของท่าน<br>
+        <span class="en">You have the right to access, correct, delete, or suspend the use of your data.</span>
+      </li>
+      <li>หากต้องการถอนความยินยอม หรือต้องการสอบถามข้อมูลเพิ่มเติม กรุณาติดต่อโรงเรียนตามช่องทางที่ระบุด้านบน<br>
+        <span class="en">To withdraw consent or inquire further, please contact us as above.</span>
+      </li>
     </ul>
 
     <h2>5. การใช้คุกกี้ (Cookies) และข้อมูลอัตโนมัติ</h2>
+    <div class="en">5. Use of Cookies & Automatic Data</div>
     <ul>
-      <li>เว็บไซต์หรือ LINE BOT อาจใช้ cookies/เทคโนโลยีเพื่อวิเคราะห์การใช้งานและปรับปรุงบริการ</li>
-      <li>ข้อมูลดังกล่าวจะไม่ใช้ระบุตัวตน เว้นแต่ท่านยินยอม</li>
+      <li>เว็บไซต์หรือ LINE BOT อาจใช้ cookies/เทคโนโลยีเพื่อวิเคราะห์การใช้งานและปรับปรุงบริการ<br>
+        <span class="en">Our website or LINE BOT may use cookies/technologies for analytics and service improvements.</span>
+      </li>
+      <li>ข้อมูลดังกล่าวจะไม่ใช้ระบุตัวตน เว้นแต่ท่านยินยอม<br>
+        <span class="en">Such data will not be used to identify you unless you consent.</span>
+      </li>
     </ul>
 
     <h2>6. การปรับปรุงนโยบาย</h2>
+    <div class="en">6. Policy Updates</div>
     <p>
       โรงเรียนขอสงวนสิทธิ์ในการปรับปรุงแก้ไขนโยบายฉบับนี้ โดยจะแจ้งผ่านเว็บไซต์/LINE BOT หากมีการเปลี่ยนแปลงสำคัญ
+      <br>
+      <span class="en">We reserve the right to update this policy. Important changes will be announced via website or LINE BOT.</span>
     </p>
 
     <div class="law-note">
       <b>หมายเหตุด้านกฎหมาย (PDPA):</b><br>
-      โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา) ปฏิบัติตาม <u>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA)</u> อย่างเคร่งครัด  
-      ท่านสามารถติดต่อขอใช้สิทธิหรือร้องเรียนได้ที่ <b>โทร. 032 232 686</b> หรือผ่าน LINE BOT ของโรงเรียน
+      โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา) ปฏิบัติตาม <u>พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 (PDPA)</u> อย่างเคร่งครัด <br>
+      <span class="en"><b>Legal Notice:</b> We strictly comply with Thailand Personal Data Protection Act (PDPA 2019).</span>
     </div>
     <div class="footer">
-      &copy; 2025 โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา)
+      &copy; 2025 โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา) | Wat Deebon (Klom Aekkachai Wittaya) School
     </div>
   </div>
 </body>
