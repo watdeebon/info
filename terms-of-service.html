@@ -23,6 +23,7 @@
       box-shadow: 0 6px 24px 0 #0001;
       padding: 2.5rem 2rem 2rem 2rem;
       border: 1.5px solid #ffe066;
+      position: relative;
     }
     .logo-box {
       display: flex;
@@ -40,13 +41,39 @@
       padding: 0.3rem;
       box-shadow: 0 2px 16px #ffe06630;
     }
+    .lang-toggle {
+      position: absolute;
+      right: 2.2rem;
+      top: 1.3rem;
+      z-index: 5;
+    }
+    .lang-toggle button {
+      background: #ffe066;
+      color: #232323;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 1.2rem;
+      margin-left: 0.5rem;
+      padding: 0.4rem 1.2rem;
+      box-shadow: 0 2px 8px #ffe06633;
+      cursor: pointer;
+      transition: background 0.19s;
+    }
+    .lang-toggle button.active, .lang-toggle button:hover {
+      background: #ffd600;
+      color: #111;
+    }
     h1 {
-      color: #ffe066;
+      color: #111;
       font-size: 2rem;
       font-weight: 600;
       margin-top: 0.2rem;
       letter-spacing: 0.01em;
       text-align: center;
+      border-bottom: 3px solid #ffe06688;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
     }
     .school-info {
       font-size: 1.09rem;
@@ -56,19 +83,25 @@
       text-align: center;
     }
     h2 {
-      color: #d4af37;
-      font-size: 1.15rem;
-      margin: 2rem 0 1rem 0;
+      color: #111;
+      font-size: 1.19rem;
+      margin: 2rem 0 0.7rem 0;
       font-weight: 600;
+      border-left: 6px solid #ffe066;
+      padding-left: 0.7rem;
+      background: #fffde2;
+      border-radius: 0.7rem 0 0 0.7rem;
     }
-    .en {
-      font-size: 0.97rem;
-      color: #888a;
-      margin-bottom: 0.2rem;
-      margin-top: -0.4rem;
+    .en-head {
+      color: #888;
+      font-size: 0.99rem;
+      font-weight: 500;
+      margin-top: -0.45rem;
+      margin-bottom: 0.7rem;
+      padding-left: 1.2rem;
     }
     ul, ol { margin-left: 1.3rem; }
-    a { color: #232323; text-decoration: underline; }
+    a { color: #116; text-decoration: underline; }
     .footer {
       color: #bdb76b;
       font-size: 0.96rem;
@@ -116,12 +149,16 @@
       background: #fff;
       box-shadow: 0 1px 6px #ffe06633;
     }
+    .th, .en { display: none; }
+    .th.active, .en.active { display: block; }
+    .en { color: #444; font-size: 1.07rem; }
     @media (max-width: 700px) {
       .container { margin: 0; border-radius: 0; box-shadow: none; padding: 2rem 0.7rem; border: none; }
       h1 { font-size: 1.18rem; }
       .school-info { font-size: 0.97rem; }
       .logo-box img { height: 48px; }
       .line-qr { width: 78px; height: 78px; }
+      .lang-toggle { right: 1rem; top: 1rem; }
     }
   </style>
 </head>
@@ -130,87 +167,128 @@
     <div class="logo-box">
       <img src="https://raw.githubusercontent.com/watdeebon/LineBot/refs/heads/main/logo-BotWDB.png" alt="โลโก้โรงเรียนวัดดีบอน">
     </div>
-    <h1>
-      ข้อกำหนดการใช้บริการ<br>
-      <span style="font-size:1.08rem;font-weight:400">Terms of Service</span>
-    </h1>
-    <div class="school-info">
-      โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา)<br>
-      Wat Deebon (Klom Aekkachai Wittaya) School<br>
-      สำนักงานเขตพื้นที่การศึกษาประถมศึกษาราชบุรี เขต 2<br>
-      4 Phetkasem Rd., Ban Khong, Photharam, Ratchaburi, Thailand<br>
-      Tel. 032 232 686
+    <div class="lang-toggle">
+      <button class="active" id="btn-th" onclick="setLang('th')">ภาษาไทย</button>
+      <button id="btn-en" onclick="setLang('en')">English</button>
     </div>
-
-    <div class="line-box">
-      <div>
-        <b>LINE Official Account โรงเรียน</b>
-        <div class="en">School LINE Official Account</div>
+    <!-- THAI -->
+    <div class="th active" id="content-th">
+      <h1>ข้อกำหนดการใช้บริการ</h1>
+      <div class="school-info">
+        โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา)<br>
+        สำนักงานเขตพื้นที่การศึกษาประถมศึกษาราชบุรี เขต 2<br>
+        หมู่ 4 ถนนเพชรเกษม ตำบลบ้านฆ้อง อำเภอโพธาราม จังหวัดราชบุรี<br>
+        โทร. 032 232 686
       </div>
-      <a class="line-link" href="https://lin.ee/ejtvVyu" target="_blank">
-        <img src="https://scdn.line-apps.com/n/line_add_friends/btn/en.png" alt="Add LINE">
-        เพิ่มเพื่อน/Add LINE
-      </a>
-      <br>
-      <img class="line-qr" src="https://qr-official.line.me/gs/M_504oylvc_BW.png" alt="LINE QR code">
-      <div class="en" style="font-size:0.95rem;">Scan QR code to add our school on LINE</div>
+      <div class="line-box">
+        <div>
+          <b>LINE Official Account โรงเรียน</b>
+        </div>
+        <a class="line-link" href="https://lin.ee/ejtvVyu" target="_blank">
+          <img src="https://scdn.line-apps.com/n/line_add_friends/btn/en.png" alt="Add LINE">
+          เพิ่มเพื่อน/Add LINE
+        </a>
+        <br>
+        <img class="line-qr" src="https://qr-official.line.me/gs/M_504oylvc_BW.png" alt="LINE QR code">
+        <div style="font-size:0.95rem;color:#666;">สแกน QR เพื่อเพิ่มโรงเรียนบน LINE</div>
+      </div>
+      <h2>1. ขอบเขตการให้บริการ</h2>
+      <div class="en-head">Scope of Service</div>
+      <ul>
+        <li>เว็บไซต์, LINE BOT และระบบสารสนเทศของโรงเรียน ให้บริการเฉพาะนักเรียน, ผู้ปกครอง, และเจ้าหน้าที่โรงเรียนเท่านั้น</li>
+        <li>ห้ามนำบริการของโรงเรียนไปใช้ในทางที่ผิดกฎหมาย หรือก่อความเสียหาย</li>
+      </ul>
+      <h2>2. การให้ข้อมูล</h2>
+      <div class="en-head">Data Provision</div>
+      <ul>
+        <li>ผู้ใช้ต้องให้ข้อมูลที่ถูกต้องและเป็นความจริงในการใช้งาน</li>
+        <li>หากให้ข้อมูลอันเป็นเท็จ อาจถูกจำกัดสิทธิ์หรือระงับการใช้บริการได้</li>
+      </ul>
+      <h2>3. ข้อจำกัดความรับผิดชอบ</h2>
+      <div class="en-head">Disclaimer</div>
+      <ul>
+        <li>โรงเรียนดำเนินมาตรการด้านความปลอดภัยข้อมูลอย่างเต็มที่</li>
+        <li>อย่างไรก็ตาม อาจเกิดความเสียหายจากปัจจัยภายนอกหรือเหตุสุดวิสัยที่โรงเรียนไม่สามารถควบคุมได้</li>
+        <li>โรงเรียนไม่รับผิดชอบความเสียหายที่เกิดจากการโจมตีไซเบอร์หรือการใช้งานโดยมิชอบ</li>
+      </ul>
+      <h2>4. การเปลี่ยนแปลงบริการ</h2>
+      <div class="en-head">Service Changes</div>
+      <ul>
+        <li>โรงเรียนขอสงวนสิทธิ์ในการปรับปรุง แก้ไข หรืองดให้บริการ LINE BOT หรือเว็บไซต์โดยไม่ต้องแจ้งให้ทราบล่วงหน้า</li>
+      </ul>
+      <h2>5. การติดต่อสอบถาม</h2>
+      <div class="en-head">Contact</div>
+      <ul>
+        <li>หากพบปัญหาการใช้งานหรือมีข้อสงสัย กรุณาติดต่อโรงเรียนที่ <a href="tel:032232686">032 232 686</a> หรือผ่าน LINE Official Account</li>
+      </ul>
+      <div class="footer">
+        &copy; 2025 โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา)
+      </div>
     </div>
-
-    <h2>1. ขอบเขตการให้บริการ</h2>
-    <div class="en">1. Scope of Service</div>
-    <ul>
-      <li>เว็บไซต์, LINE BOT และระบบสารสนเทศของโรงเรียน ให้บริการเฉพาะนักเรียน, ผู้ปกครอง, และเจ้าหน้าที่โรงเรียนเท่านั้น<br>
-        <span class="en">Our website, LINE BOT, and information systems are for students, parents, and school staff only.</span>
-      </li>
-      <li>ห้ามนำบริการของโรงเรียนไปใช้ในทางที่ผิดกฎหมาย หรือก่อความเสียหาย<br>
-        <span class="en">Do not use our services for illegal or harmful purposes.</span>
-      </li>
-    </ul>
-
-    <h2>2. การให้ข้อมูล</h2>
-    <div class="en">2. Data Provision</div>
-    <ul>
-      <li>ผู้ใช้ต้องให้ข้อมูลที่ถูกต้องและเป็นความจริงในการใช้งาน<br>
-        <span class="en">Users must provide accurate and truthful information when using our services.</span>
-      </li>
-      <li>หากให้ข้อมูลอันเป็นเท็จ อาจถูกจำกัดสิทธิ์หรือระงับการใช้บริการได้<br>
-        <span class="en">Providing false information may result in restricted or suspended service.</span>
-      </li>
-    </ul>
-
-    <h2>3. ข้อจำกัดความรับผิดชอบ</h2>
-    <div class="en">3. Disclaimer</div>
-    <ul>
-      <li>โรงเรียนดำเนินมาตรการด้านความปลอดภัยข้อมูลอย่างเต็มที่<br>
-        <span class="en">We implement appropriate security measures for your data.</span>
-      </li>
-      <li>อย่างไรก็ตาม อาจเกิดความเสียหายจากปัจจัยภายนอกหรือเหตุสุดวิสัยที่โรงเรียนไม่สามารถควบคุมได้<br>
-        <span class="en">However, there may be risks beyond our control or force majeure.</span>
-      </li>
-      <li>โรงเรียนไม่รับผิดชอบความเสียหายที่เกิดจากการโจมตีไซเบอร์หรือการใช้งานโดยมิชอบ<br>
-        <span class="en">We are not liable for damages arising from cyber-attacks or misuse.</span>
-      </li>
-    </ul>
-
-    <h2>4. การเปลี่ยนแปลงบริการ</h2>
-    <div class="en">4. Service Changes</div>
-    <ul>
-      <li>โรงเรียนขอสงวนสิทธิ์ในการปรับปรุง แก้ไข หรืองดให้บริการ LINE BOT หรือเว็บไซต์โดยไม่ต้องแจ้งให้ทราบล่วงหน้า<br>
-        <span class="en">We reserve the right to update, modify, or suspend our LINE BOT or website without prior notice.</span>
-      </li>
-    </ul>
-
-    <h2>5. การติดต่อสอบถาม</h2>
-    <div class="en">5. Contact</div>
-    <ul>
-      <li>หากพบปัญหาการใช้งานหรือมีข้อสงสัย กรุณาติดต่อโรงเรียนที่ <a href="tel:032232686">032 232 686</a> หรือผ่าน LINE Official Account<br>
-        <span class="en">For inquiries or issues, contact us at 032 232 686 or via our LINE Official Account above.</span>
-      </li>
-    </ul>
-
-    <div class="footer">
-      &copy; 2025 โรงเรียนวัดดีบอน (กล่อมเอกชัยวิทยา) | Wat Deebon (Klom Aekkachai Wittaya) School
+    <!-- ENGLISH -->
+    <div class="en" id="content-en">
+      <h1>Terms of Service</h1>
+      <div class="school-info">
+        Wat Deebon (Klom Aekkachai Wittaya) School<br>
+        Ratchaburi Primary Educational Service Area Office 2<br>
+        4 Phetkasem Rd., Ban Khong, Photharam, Ratchaburi, Thailand<br>
+        Tel. 032 232 686
+      </div>
+      <div class="line-box">
+        <div>
+          <b>School LINE Official Account</b>
+        </div>
+        <a class="line-link" href="https://lin.ee/ejtvVyu" target="_blank">
+          <img src="https://scdn.line-apps.com/n/line_add_friends/btn/en.png" alt="Add LINE">
+          Add LINE
+        </a>
+        <br>
+        <img class="line-qr" src="https://qr-official.line.me/gs/M_504oylvc_BW.png" alt="LINE QR code">
+        <div style="font-size:0.95rem;color:#666;">Scan QR code to add our school on LINE</div>
+      </div>
+      <h2>1. Scope of Service</h2>
+      <ul>
+        <li>Our website, LINE BOT, and information systems are for students, parents, and school staff only.</li>
+        <li>Do not use our services for illegal or harmful purposes.</li>
+      </ul>
+      <h2>2. Data Provision</h2>
+      <ul>
+        <li>Users must provide accurate and truthful information when using our services.</li>
+        <li>Providing false information may result in restricted or suspended service.</li>
+      </ul>
+      <h2>3. Disclaimer</h2>
+      <ul>
+        <li>We implement appropriate security measures for your data.</li>
+        <li>However, there may be risks beyond our control or force majeure.</li>
+        <li>We are not liable for damages arising from cyber-attacks or misuse.</li>
+      </ul>
+      <h2>4. Service Changes</h2>
+      <ul>
+        <li>We reserve the right to update, modify, or suspend our LINE BOT or website without prior notice.</li>
+      </ul>
+      <h2>5. Contact</h2>
+      <ul>
+        <li>For inquiries or issues, contact us at <a href="tel:032232686">032 232 686</a> or via our LINE Official Account above.</li>
+      </ul>
+      <div class="footer">
+        &copy; 2025 Wat Deebon (Klom Aekkachai Wittaya) School
+      </div>
     </div>
   </div>
+  <script>
+    function setLang(lang) {
+      document.getElementById('btn-th').classList.remove('active');
+      document.getElementById('btn-en').classList.remove('active');
+      document.getElementById('content-th').classList.remove('active');
+      document.getElementById('content-en').classList.remove('active');
+      if (lang === 'th') {
+        document.getElementById('btn-th').classList.add('active');
+        document.getElementById('content-th').classList.add('active');
+      } else {
+        document.getElementById('btn-en').classList.add('active');
+        document.getElementById('content-en').classList.add('active');
+      }
+    }
+  </script>
 </body>
 </html>
